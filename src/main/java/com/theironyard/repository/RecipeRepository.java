@@ -27,6 +27,7 @@ public class RecipeRepository {
                 (rs, rowNum) -> new Recipe(
                         rs.getInt("id" ),
                         rs.getString("title" ),
+                        rs.getString("imageUrl"),
                         rs.getString("description" ),
                         rs.getInt("servings" )
                 ),
