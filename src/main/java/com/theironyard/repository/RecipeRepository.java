@@ -1,5 +1,7 @@
 package com.theironyard.repository;
 
+import com.theironyard.entity.Ingredient;
+import com.theironyard.entity.Instruction;
 import com.theironyard.entity.Recipe;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -10,24 +12,30 @@ import java.util.List;
 @Component
 public class RecipeRepository {
 
+    final
+    private JdbcTemplate jdbcTemplate;
+
     @Autowired
-    JdbcTemplate jdbcTemplate;
+    public RecipeRepository(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     /**
-     * List recipes.
+     * List all recipes, optionally filtered by a search string
      */
     public List<Recipe> listRecipes(String search) {
         System.out.println(jdbcTemplate.getDataSource());
         return jdbcTemplate.query(
                 "SELECT * " +
                         "FROM recipe " +
-                        "WHERE lower(title) like lower(?) " +
-                        "OR lower(description) like lower(?)",
+                        "WHERE lower(title) LIKE lower(?) " +
+                        "OR lower(description) LIKE lower(?)" +
+                        "ORDER BY created DESC",
 
                 (rs, rowNum) -> new Recipe(
                         rs.getInt("id" ),
                         rs.getString("title" ),
-                        rs.getString("imageUrl"),
+                        rs.getString("imageUrl" ),
                         rs.getString("description" ),
                         rs.getInt("servings" )
                 ),
@@ -37,4 +45,41 @@ public class RecipeRepository {
         );
     }
 
+    public Recipe getRecipe(Integer recipeId) {
+        return jdbcTemplate.queryForObject("SELECT * FROM recipe WHERE id = ?",
+                (rs, rowNum) -> new Recipe(
+                        rs.getInt("id" ),
+                        rs.getString("title" ),
+                        rs.getString("imageUrl" ),
+                        rs.getString("description" ),
+                        rs.getInt("servings" ),
+                        listIngredients(recipeId),
+                        listInstructions(recipeId)
+                ),
+                recipeId);
+    }
+
+    private List<Ingredient> listIngredients(Integer recipeId) {
+        return jdbcTemplate.query("SELECT * FROM ingredient WHERE recipeId = ? ORDER BY id ASC",
+
+                (rs, rowNum) -> new Ingredient(
+                        rs.getInt("id" ),
+                        rs.getString("quantity" ),
+                        rs.getString("name" )
+                ),
+
+                recipeId);
+
+    }
+
+    private List<Instruction> listInstructions(Integer recipeId) {
+        return jdbcTemplate.query("SELECT * FROM instruction WHERE recipeId = ? ORDER BY id ASC",
+
+                (rs, rowNum) -> new Instruction(
+                        rs.getInt("id" ),
+                        rs.getString("instruction" )
+                ),
+
+                recipeId);
+    }
 }

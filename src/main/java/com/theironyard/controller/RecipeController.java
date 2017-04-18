@@ -24,7 +24,10 @@ public class RecipeController {
     }
 
     @GetMapping("/recipe")
-    public String showRecipe(Integer recipeId){
+    public String showRecipe(ModelMap model, Integer recipeId){
+
+        model.put("recipe", repository.getRecipe(recipeId));
+
         return "recipe";
     }
 }

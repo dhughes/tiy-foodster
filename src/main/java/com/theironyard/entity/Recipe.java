@@ -10,7 +10,7 @@ public class Recipe {
     private String description;
     private Integer servings;
     private List<Ingredient> ingredients;
-    private List<Instruction> instruction;
+    private List<Instruction> instructions;
 
     public Recipe(int id, String title, String imageUrl, String description, int servings) {
         this.id = id;
@@ -18,6 +18,17 @@ public class Recipe {
         this.imageUrl = imageUrl;
         this.description = description;
         this.servings = servings;
+    }
+
+    public Recipe(int id, String title, String imageUrl, String description, int servings, List<Ingredient> ingredients, List<Instruction> instructions) {
+
+        this.id = id;
+        this.title = title;
+        this.imageUrl = imageUrl;
+        this.description = description;
+        this.servings = servings;
+        this.ingredients = ingredients;
+        this.instructions = instructions;
     }
 
     public Integer getId() {
@@ -68,12 +79,12 @@ public class Recipe {
         this.ingredients = ingredients;
     }
 
-    public List<Instruction> getInstruction() {
-        return instruction;
+    public List<Instruction> getInstructions() {
+        return instructions;
     }
 
-    public void setInstruction(List<Instruction> instruction) {
-        this.instruction = instruction;
+    public void setInstructions(List<Instruction> instructions) {
+        this.instructions = instructions;
     }
 
     @Override
@@ -81,10 +92,11 @@ public class Recipe {
         return "Recipe{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
+                ", imageUrl='" + imageUrl + '\'' +
                 ", description='" + description + '\'' +
                 ", servings=" + servings +
                 ", ingredients=" + ingredients +
-                ", instruction=" + instruction +
+                ", instructions=" + instructions +
                 '}';
     }
 }

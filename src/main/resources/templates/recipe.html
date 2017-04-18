@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="utf-8" />
     <title>Recipes Search</title>
   </head>
 
-    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href="@{css/style.css}" />
   <body>
 
     <a aria-label="new-recipe" class="new-recipe">+</a>
+
+    <div th:text="${recipe}">...</div>
 
     <section id="container">
       <h1>Title of Recipe</h1>

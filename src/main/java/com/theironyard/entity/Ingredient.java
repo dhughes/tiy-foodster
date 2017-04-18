@@ -9,6 +9,12 @@ public class Ingredient {
     private String quantity;
     private String name;
 
+    public Ingredient(int id, String quantity, String name) {
+        this.id = id;
+        this.quantity = quantity;
+        this.name = name;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -31,5 +37,14 @@ public class Ingredient {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Ingredient{" +
+                "id=" + id +
+                ", quantity='" + quantity + '\'' +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

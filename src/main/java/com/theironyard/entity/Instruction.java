@@ -5,6 +5,12 @@ public class Instruction {
     private Integer id;
     private String instruction;
 
+    public Instruction(int id, String instruction) {
+
+        this.id = id;
+        this.instruction = instruction;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -19,5 +25,13 @@ public class Instruction {
 
     public void setInstruction(String instruction) {
         this.instruction = instruction;
+    }
+
+    @Override
+    public String toString() {
+        return "Instruction{" +
+                "id=" + id +
+                ", instruction='" + instruction + '\'' +
+                '}';
     }
 }
