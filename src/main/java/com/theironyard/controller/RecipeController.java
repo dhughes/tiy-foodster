@@ -30,4 +30,9 @@ public class RecipeController {
 
         return "recipe";
     }
+
+    @GetMapping("/addRecipe")
+    public String addRecipe(){
+        return "foo";
+    }
 }

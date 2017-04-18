@@ -64,7 +64,6 @@ public class RecipeRepository {
 
                 (rs, rowNum) -> new Ingredient(
                         rs.getInt("id" ),
-                        rs.getString("quantity" ),
                         rs.getString("name" )
                 ),
 

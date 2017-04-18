@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href="@{css/style.css}" />
   <body>
 
-    <a aria-label="new-recipe" class="icon new-recipe">&#43;</a>
+    <a th:href="@{/addRecipe}" aria-label="new-recipe" class="icon new-recipe">&#43;</a>
 
     <section id="container">
       <form action="index.html" th:action="@{/}" method="get">
@@ -59,6 +59,10 @@
           </article>
         </a>
 
+      </section>
+
+      <section th:if="${recipes.size()} == 0">
+        Sorry, nothing matched your search.
       </section>
     </section>
   </body>

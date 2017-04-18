@@ -8,31 +8,32 @@
     <link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href="@{css/style.css}" />
   <body>
 
-    <a aria-label="back to search" class="icon back">&#10094;</a>
-    <a aria-label="new-recipe" class="icon new-recipe">&#43;</a>
-
-    <div th:text="${recipe}">...</div>
+    <a th:href="@{/}" aria-label="back to search" class="icon back">&#10094;</a>
+    <a th:href="@{/addRecipe}" aria-label="new-recipe" class="icon new-recipe">&#43;</a>
 
     <section id="container">
-      <h1>Title of Recipe</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <h1 th:text="${recipe.title}">Title of Recipe</h1>
+      <p th:text="${recipe.description}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       <img src="http://lorempixel.com/400/200/cats/" th:src="@{${recipe.imageUrl}}" />
 
-      <p>serves: 4</p>
+      <p>serves: <span th:text="${recipe.servings}">4</span></p>
+
       <aside>
         <ul>
-          <li>2 collard leaves</li>
-          <li>1/2 cup basil hummus</li>
-          <li>10 tomatos</li>
-          <li>1/2 cup zucchini</li>
+          <li th:each="ingredient : ${recipe.ingredients}" th:text="${ingredient.name}">2 collard leaves</li>
+          <li th:remove="all">1/2 cup basil hummus</li>
+          <li th:remove="all">10 tomatos</li>
+          <li th:remove="all">1/2 cup zucchini</li>
         </ul>
 
         <ol>
-          <li>Wash and dry collard leaves and then use a paring knife to shave down the stems.</li>
-          <li>Spread ¼ cup of hummus near the top/middle of each leaf,</li>
-          <li>Fill each leaf with the remaining veggies, </li>
-          <li>Wrap the leaves as you would a burrito.</li>
-          <li> Cut each wrap in half and enjoy.</li>
+          <li  th:each="instruction : ${recipe.instructions}" th:text="${instruction.instruction}">
+            Wash and dry collard leaves and then use a paring knife to shave down the stems.
+          </li>
+          <li th:remove="all">Spread ¼ cup of hummus near the top/middle of each leaf,</li>
+          <li th:remove="all">Fill each leaf with the remaining veggies, </li>
+          <li th:remove="all">Wrap the leaves as you would a burrito.</li>
+          <li th:remove="all"> Cut each wrap in half and enjoy.</li>
         </ol>
       </aside>
     </section>

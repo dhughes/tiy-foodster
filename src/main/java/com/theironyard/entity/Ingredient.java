@@ -6,12 +6,10 @@ package com.theironyard.entity;
 public class Ingredient {
 
     private Integer id;
-    private String quantity;
     private String name;
 
-    public Ingredient(int id, String quantity, String name) {
+    public Ingredient(int id, String name) {
         this.id = id;
-        this.quantity = quantity;
         this.name = name;
     }
 
@@ -21,14 +19,6 @@ public class Ingredient {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(String quantity) {
-        this.quantity = quantity;
     }
 
     public String getName() {
@@ -43,7 +33,6 @@ public class Ingredient {
     public String toString() {
         return "Ingredient{" +
                 "id=" + id +
-                ", quantity='" + quantity + '\'' +
                 ", name='" + name + '\'' +
                 '}';
     }
