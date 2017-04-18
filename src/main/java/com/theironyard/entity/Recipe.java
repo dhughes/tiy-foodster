@@ -6,14 +6,16 @@ public class Recipe {
 
     private Integer id;
     private String title;
+    private String imageUrl;
     private String description;
     private Integer servings;
     private List<Ingredient> ingredients;
     private List<Instruction> instruction;
 
-    public Recipe(int id, String title, String description, int servings) {
+    public Recipe(int id, String title, String imageUrl, String description, int servings) {
         this.id = id;
         this.title = title;
+        this.imageUrl = imageUrl;
         this.description = description;
         this.servings = servings;
     }
@@ -32,6 +34,14 @@ public class Recipe {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public String getDescription() {
