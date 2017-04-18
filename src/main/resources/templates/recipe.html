@@ -16,10 +16,11 @@
       <p th:text="${recipe.description}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       <img src="http://lorempixel.com/400/200/cats/" th:src="@{${recipe.imageUrl}}" />
 
-      <p>serves: <span th:text="${recipe.servings}">4</span></p>
+      <h2>serves: <span th:text="${recipe.servings}">4</span></h2>
 
       <aside>
         <ul>
+          <h2>Ingredients</h2>
           <li th:each="ingredient : ${recipe.ingredients}" th:text="${ingredient.name}">2 collard leaves</li>
           <li th:remove="all">1/2 cup basil hummus</li>
           <li th:remove="all">10 tomatos</li>
@@ -27,6 +28,7 @@
         </ul>
 
         <ol>
+          <h2>Directions</h2>
           <li  th:each="instruction : ${recipe.instructions}" th:text="${instruction.instruction}">
             Wash and dry collard leaves and then use a paring knife to shave down the stems.
           </li>
