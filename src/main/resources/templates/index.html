@@ -17,35 +17,47 @@
       </form>
 
       <section>
-        <article th:each="recipe : ${recipes}">
-          <img src="http://lorempixel.com/400/200/cats/" th:src="@{${recipe.imageUrl}}" />
-          <h3 th:text="${recipe.title}">Title of recipe</h3>
-        </article>
+        <a href="#" alt="recipe link"/>
+          <article th:each="recipe : ${recipes}">
+            <img src="http://lorempixel.com/400/200/cats/" th:src="@{${recipe.imageUrl}}" />
+            <h3 th:text="${recipe.title}">Title of recipe</h3>
+          </article>
+        </a>
 
-        <article th:remove="all">
-          <img src="http://lorempixel.com/400/200/cats/" />
-          <h3>Title of recipe</h3>
-        </article>
+        <a href="#" alt="recipe link"/>
+          <article th:remove="all">
+            <img src="http://lorempixel.com/400/200/cats/" />
+            <h3>Title of recipe</h3>
+          </article>
+        </a>
 
-        <article th:remove="all">
-          <img src="http://lorempixel.com/400/200/cats/" />
-          <h3>Title of recipe</h3>
-        </article>
+        <a href="#" alt="recipe link"/>
+          <article th:remove="all">
+            <img src="http://lorempixel.com/400/200/cats/" />
+            <h3>Title of recipe</h3>
+          </article>
+        </a>
 
-        <article th:remove="all">
-          <img src="http://lorempixel.com/400/200/cats/" />
-          <h3>Title of recipe</h3>
-        </article>
+        <a href="#" alt="recipe link"/>
+          <article th:remove="all">
+            <img src="http://lorempixel.com/400/200/cats/" />
+            <h3>Title of recipe</h3>
+          </article>
+        </a>
 
-        <article th:remove="all">
-          <img src="http://lorempixel.com/400/200/cats/" />
-          <h3>Title of recipe</h3>
-        </article>
+        <a href="#" alt="recipe link"/>
+          <article th:remove="all">
+            <img src="http://lorempixel.com/400/200/cats/" />
+            <h3>Title of recipe</h3>
+          </article>
+        </a>
 
-        <article th:remove="all">
-          <img src="http://lorempixel.com/400/200/cats/" />
-          <h3>Title of recipe</h3>
-        </article>
+        <a href="#" alt="recipe link"/>
+          <article th:remove="all">
+            <img src="http://lorempixel.com/400/200/cats/" />
+            <h3>Title of recipe</h3>
+          </article>
+        </a>
 
       </section>
     </section>
