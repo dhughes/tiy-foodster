@@ -8,14 +8,33 @@
     <link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href="@{css/style.css}" />
   <body>
 
-    <a aria-label="new-recipe" class="new-recipe">+</a>
+    <a aria-label="back to search" class="icon back">&#10094;</a>
+    <a aria-label="new-recipe" class="icon new-recipe">&#43;</a>
 
     <div th:text="${recipe}">...</div>
 
     <section id="container">
       <h1>Title of Recipe</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      
+      <img src="http://lorempixel.com/400/200/cats/" th:src="@{${recipe.imageUrl}}" />
+
+      <p>serves: 4</p>
+      <aside>
+        <ul>
+          <li>2 collard leaves</li>
+          <li>1/2 cup basil hummus</li>
+          <li>10 tomatos</li>
+          <li>1/2 cup zucchini</li>
+        </ul>
+
+        <ol>
+          <li>Wash and dry collard leaves and then use a paring knife to shave down the stems.</li>
+          <li>Spread ¼ cup of hummus near the top/middle of each leaf,</li>
+          <li>Fill each leaf with the remaining veggies, </li>
+          <li>Wrap the leaves as you would a burrito.</li>
+          <li> Cut each wrap in half and enjoy.</li>
+        </ol>
+      </aside>
     </section>
   </body>
 </html>
