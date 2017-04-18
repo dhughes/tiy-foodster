@@ -24,8 +24,6 @@ p, li {
 }
 
 #container {
-  margin: 0 15%;
-  padding: 40px;
   background: white;
   overflow: hidden;
 }
@@ -65,7 +63,7 @@ button:hover{
 }
 
 article {
-  width: 31.3%;
+  width: 48ic%;
   float: left;
   height: 200px;
   margin: 1%;
@@ -104,23 +102,25 @@ article h3{
 }
 
 .icon {
-  color: teal;
-  background: white;
+  top: 15px;
+  color: white;
+  background: teal;
   display: block;
   padding: 10px;
   text-align: center;
   border-radius: 3px;
   font-size: 15px;
-  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
   position: absolute;
   width: 25px;
   height: 25px;
+  border: 1px solid teal;
 }
 
 .icon:hover {
-  color: white;
-  border: 1px solid white;
-  background: teal;
+  color: teal;
+  background: white;
 }
 
 .new-recipe {
@@ -146,4 +146,27 @@ aside {
 ul, ol {
   border: 2px solid teal;
   margin: 10px;
+}
+
+@media (min-width: 768px) {
+  #container {
+    margin: 0 15%;
+    padding: 40px 0;
+  }
+
+  article {
+    width: 31.3%;
+  }
+
+  .icon {
+    top: 5px;
+    color: teal;
+    background: white;
+  }
+
+  .icon:hover {
+    color: white;
+    border: 1px solid white;
+    background: teal;
+  }
 }
