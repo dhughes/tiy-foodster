@@ -14,7 +14,7 @@
     <section id="container">
       <h1 th:text="${recipe.title}">Title of Recipe</h1>
       <p th:text="${recipe.description}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <img src="http://lorempixel.com/400/200/cats/" th:src="@{${recipe.imageUrl}}" />
+      <img class="recipeImg" src="http://lorempixel.com/400/200/cats/" th:src="@{${recipe.imageUrl}}" />
 
       <h2>serves: <span th:text="${recipe.servings}">4</span></h2>
 

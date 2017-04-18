@@ -131,7 +131,7 @@ article h3{
   left: 30px;
 }
 
-section img {
+.recipeImg {
   width: 100%;
   height: 400px;
   object-fit: cover;
