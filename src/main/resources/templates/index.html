@@ -1,41 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Recipes Search</title>
   </head>
 
-    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href="@{css/style.css}" />
   <body>
 
     <a aria-label="new-recipe" class="new-recipe">+</a>
 
     <section id="container">
-      <input placeholder="search recipes">
-      <button>find a new dish!</button>
+      <form action="index.html" th:action="@{/}" method="get">
+        <input name="search" placeholder="search recipes" th:value="${search}" />
+        <button>find a new dish!</button>
+      </form>
 
       <section>
-        <article>
+        <article th:each="recipe : ${recipes}">
+          <h3 th:text="${recipe.title}">Title of recipe</h3>
+        </article>
+
+        <article th:remove="all">
           <h3>Title of recipe</h3>
         </article>
 
-        <article>
+        <article th:remove="all">
           <h3>Title of recipe</h3>
         </article>
 
-        <article>
+        <article th:remove="all">
           <h3>Title of recipe</h3>
         </article>
 
-        <article>
+        <article th:remove="all">
           <h3>Title of recipe</h3>
         </article>
 
-        <article>
-          <h3>Title of recipe</h3>
-        </article>
-
-        <article>
+        <article th:remove="all">
           <h3>Title of recipe</h3>
         </article>
 
