@@ -12,39 +12,41 @@
 <a href="index.html" th:href="@{/}" aria-label="back to search"
    class="icon back">&#10094;</a>
 
-<section id="container">
+<section id="container" class="recipe-form">
+    <h1>Create a new recipe!</h1>
+
     <form action="index.html" th:href="@{/addRecipe}" method="post">
-        <div>
-            <label>
-                Title:
-                <input type="text" name="title" value=""/>
-            </label>
-        </div>
-        <br />
-        <div>
-            <label>
-                Description:
-                <textarea name="description"></textarea>
-            </label>
-        </div>
-        <br />
-        <div>
-            <label>
-                Upload an Image:
-                <input type="file" name="image"/>
-            </label>
-        </div>
-        <br />
-        <div>
-            <label>
-                Serves:
-                <input type="number" name="serves"/>
-            </label>
-        </div>
-        <br />
+      <input title="title" type="text" name="title" placeholder="Title" />
 
-        <button>Create!</button>
+      <textarea title="description" name="description" placeholder="Description"></textarea>
 
+      <input title="serves" type="text" name="serves" placeholder="Number of Servings"/>
+
+      <input title="image" type="text" name="image" placeholder="Insert Image Link"/>
+
+      <div class="recipe-form-twocol">
+        <ul class="recipe-form-list">
+          <h2>Ingredients</h2>
+
+          <li><input title="image" type="text" name="image" placeholder="Ingredient"/></li>
+
+          <li><input title="image" type="text" name="image" placeholder="Ingredient"/></li>
+
+          <a class="icon more" href="recipeForm.html" aria-label="more-ingrdients" class="">&#43;</a>
+        </ul>
+
+        <ol class="recipe-form-list">
+          <h2>Instructions</h2>
+
+          <li><input title="instruction" type="text" name="image" placeholder="Instruction"/></li>
+
+          <li><input title="instruction" type="text" name="image" placeholder="Instruction"/></li>
+
+          <a class="icon more" href="recipeForm.html"  aria-label="more-instructions" class="">&#43;</a>
+        </ol>
+      </div>
+
+      <button>Create!</button>
     </form>
 
 

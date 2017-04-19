@@ -41,8 +41,26 @@ input {
   font-family: 'Fjalla One', sans-serif;
 }
 
+.recipe-form input, textarea {
+  border-bottom: 2px solid teal;
+  width: 90%;
+  text-transform: none;
+  font-size: 20px;
+  font-family: 'Catamaran', sans-serif;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+textarea {
+  border: 2px solid teal;
+}
+
 input:focus{
   outline: none;
+}
+
+input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder {
+  color: lightgrey;
 }
 
 button {
@@ -143,10 +161,25 @@ aside {
   text-align: left;
 }
 
-ul, ol {
+.recipe {
   border: 2px solid teal;
   margin: 10px;
 }
+
+.recipe-form-twocol {
+  display: flex;
+}
+
+.recipe-form-list{
+  box-sizing: border-box;
+  width: 50%;
+  padding: 0;
+}
+
+.recipe-form-list li input {
+  width: 100% !important;
+}
+
 
 @media (min-width: 768px) {
   #container {
@@ -162,8 +195,17 @@ ul, ol {
     display: block;
   }
 
-  input {
+  .more {
+    position: static;
+    margin: 0 auto;
+  }
+
+ input {
     width: 50%;
+  }
+
+  .recipe-form input,textarea {
+    width: 75%;
   }
 
   aside {
