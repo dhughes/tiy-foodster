@@ -1,33 +1,47 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <title>Recipes Search</title>
 </head>
 
-<link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href="@{css/style.css}" />
+<link rel="stylesheet" type="text/css" href="../static/css/style.css"
+      th:href="@{css/style.css}"/>
 <body>
 
-<a href="index.html" th:href="@{/}" aria-label="back to search" class="icon back">&#10094;</a>
+<a href="index.html" th:href="@{/}" aria-label="back to search"
+   class="icon back">&#10094;</a>
 
 <section id="container">
     <form action="index.html" th:href="@{/addRecipe}" method="post">
-        <label>
-            Title:
-            <input type="text" name="title" value="" />
-        </label>
-        <label>
-            Description:
-            <textarea name="description"></textarea>
-        </label>
-        <label>
-            Upload an Image:
-            <input type="file" name="image" />
-        </label>
-        <label>
-            Serves:
-            <input type="number" name="serves" />
-        </label>
+        <div>
+            <label>
+                Title:
+                <input type="text" name="title" value=""/>
+            </label>
+        </div>
+        <br />
+        <div>
+            <label>
+                Description:
+                <textarea name="description"></textarea>
+            </label>
+        </div>
+        <br />
+        <div>
+            <label>
+                Upload an Image:
+                <input type="file" name="image"/>
+            </label>
+        </div>
+        <br />
+        <div>
+            <label>
+                Serves:
+                <input type="number" name="serves"/>
+            </label>
+        </div>
+        <br />
 
         <button>Create!</button>
 
