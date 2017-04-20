@@ -166,18 +166,22 @@ aside {
   margin: 10px;
 }
 
-.recipe-form-twocol {
-  display: flex;
-}
-
 .recipe-form-list{
   box-sizing: border-box;
+  float:left;
   width: 50%;
+}
+
+.recipe-form-list ul, .recipe-form-list ol {
   padding: 0;
 }
 
 .recipe-form-list li input {
   width: 100% !important;
+}
+
+br {
+  clear:both;
 }
 
 
