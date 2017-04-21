@@ -30,7 +30,7 @@ p, li {
 }
 
 input {
-  border: none;
+  border: 1px solid transparent; 
   border-bottom: 5px solid teal;
   width: 90%;
   display: block;
@@ -52,7 +52,7 @@ input {
 }
 
 textarea {
-  border: 2px solid teal;
+  /*border: 2px solid teal;*/
 }
 
 input:focus{
