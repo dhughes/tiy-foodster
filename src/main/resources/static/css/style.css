@@ -29,8 +29,12 @@ p, li {
   padding: 40px 0;
 }
 
+form {
+  margin: 0 15%;
+}
+
 input {
-  border: 1px solid transparent; 
+  border: none;
   border-bottom: 5px solid teal;
   width: 90%;
   display: block;
@@ -43,7 +47,7 @@ input {
 
 .recipe-form input, textarea {
   border-bottom: 2px solid teal;
-  width: 90%;
+  width: 100%;
   text-transform: none;
   font-size: 20px;
   font-family: 'Catamaran', sans-serif;
@@ -210,7 +214,7 @@ br {
   }
 
   .recipe-form input,textarea {
-    width: 75%;
+    width: 100%;
   }
 
   aside {
