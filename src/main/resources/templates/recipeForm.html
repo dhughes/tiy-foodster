@@ -15,22 +15,22 @@
 <section id="container" class="recipe-form">
     <h1>Create a new recipe!</h1>
 
-    <form action="index.html" th:href="@{/addRecipe}" method="post">
+    <form action="index.html" th:action="@{/saveRecipe}" method="post">
       <input type="text" name="title" placeholder="Title" />
 
       <textarea name="description" placeholder="Description"></textarea>
 
-      <input type="text" name="serves" placeholder="Number of Servings"/>
+      <input type="text" name="servings" placeholder="Number of Servings"/>
 
-      <input type="text" name="image" placeholder="Insert Image Link"/>
+      <input type="text" name="imageUrl" placeholder="Insert Image Link"/>
 
       <div class="recipe-form-list">
         <ul>
           <h2>Ingredients</h2>
 
-          <li><input type="text" name="ingredient" placeholder="New Ingredient"/></li>
+          <li><input type="text" name="ingredients[0].name" placeholder="New Ingredient"/></li>
 
-          <li><input type="text" name="ingredient" placeholder="New Ingredient"/></li>
+          <li><input type="text" name="ingredients[1].name" placeholder="New Ingredient"/></li>
         </ul>
 
         <a class="icon more" id="add-ingredient" aria-label="add-ingrdient">&#43;</a>
@@ -41,19 +41,19 @@
         <ol>
           <h2>Instructions</h2>
 
-          <li><input type="text" name="instruction" placeholder="New Instruction"/></li>
+          <li><input type="text" name="instructions[0].instruction" placeholder="New Instruction"/></li>
 
-          <li><input type="text" name="instruction" placeholder=" New Instruction"/></li>
+          <li><input type="text" name="instructions[1].instruction" placeholder=" New Instruction"/></li>
         </ol>
 
         <a class="icon more" id="add-instruction"  aria-label="add-instruction">&#43;</a>
       </div>
-      <br>
+      <br />
 
       <button>Create!</button>
     </form>
 </section>
 
-<script type="text/javascript" src="../static/js/script.js"></script>
+<script type="text/javascript" src="../static/js/script.js" th:src="@{/js/script.js}"></script>
 </body>
 </html>

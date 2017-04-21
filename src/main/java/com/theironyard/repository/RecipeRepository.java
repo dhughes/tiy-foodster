@@ -81,4 +81,35 @@ public class RecipeRepository {
 
                 recipeId);
     }
+
+    public void saveRecipe(Recipe recipe) {
+        Integer recipieId = jdbcTemplate.queryForObject(
+                "INSERT INTO recipe (title, description, servings, imageurl)" +
+                        "VALUES (?, ?, ?, ?) RETURNING id",
+                int.class,
+                recipe.getTitle(),
+                recipe.getDescription(),
+                recipe.getServings(),
+                recipe.getImageUrl()
+        );
+
+        // insert ingredients
+        for (Ingredient ingredient : recipe.getIngredients()) {
+            jdbcTemplate.update(
+                    "INSERT INTO ingredient (name, recipeid) VALUES (?, ?)",
+                    ingredient.getName(),
+                    recipieId
+            );
+        }
+
+        // insert instructions
+        for (Instruction instruction : recipe.getInstructions()) {
+            jdbcTemplate.update(
+                    "INSERT INTO instruction (instruction, recipeid) VALUES (?, ?)",
+                    instruction.getInstruction(),
+                    recipieId
+            );
+        }
+
+    }
 }

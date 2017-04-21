@@ -1,10 +1,12 @@
 package com.theironyard.controller;
 
+import com.theironyard.entity.Recipe;
 import com.theironyard.repository.RecipeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -30,8 +32,14 @@ public class RecipeController {
         return "recipe";
     }
 
-    @GetMapping("/recipeForm")
-    public String addRecipe(){
+    @GetMapping("/addRecipe")
+    public String recipeForm(){
         return "recipeForm";
+    }
+
+    @PostMapping("/saveRecipe")
+    public String saveRecipe(Recipe recipe){
+        repository.saveRecipe(recipe);
+        return "redirect:/";
     }
 }

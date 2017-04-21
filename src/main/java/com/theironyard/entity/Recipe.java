@@ -1,5 +1,6 @@
 package com.theironyard.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Recipe {
@@ -9,8 +10,8 @@ public class Recipe {
     private String imageUrl;
     private String description;
     private Integer servings;
-    private List<Ingredient> ingredients;
-    private List<Instruction> instructions;
+    private List<Ingredient> ingredients = new ArrayList<>();
+    private List<Instruction> instructions = new ArrayList<>();
 
     public Recipe(int id, String title, String imageUrl, String description, int servings) {
         this.id = id;
@@ -30,6 +31,8 @@ public class Recipe {
         this.ingredients = ingredients;
         this.instructions = instructions;
     }
+
+    public Recipe(){}
 
     public Integer getId() {
         return id;

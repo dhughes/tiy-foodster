@@ -13,6 +13,8 @@ public class Ingredient {
         this.name = name;
     }
 
+    public Ingredient(){}
+
     public Integer getId() {
         return id;
     }

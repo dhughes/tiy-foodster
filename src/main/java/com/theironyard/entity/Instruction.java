@@ -11,6 +11,8 @@ public class Instruction {
         this.instruction = instruction;
     }
 
+    public Instruction(){}
+
     public Integer getId() {
         return id;
     }
