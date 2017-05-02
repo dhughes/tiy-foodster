@@ -17,14 +17,14 @@
       </form>
 
       <section th:if="${recipes.size()} > 0">
-        <a href="#" th:href="@{'/recipe?recipeId=' + ${recipe.id}}" title="recipe link" th:each="recipe : ${recipes}" th:title="${recipe.title}" >
+        <a href="recipe.html" th:href="@{'/recipe?recipeId=' + ${recipe.id}}" title="recipe link" th:each="recipe : ${recipes}" th:title="${recipe.title}" >
           <article>
             <img src="http://lorempixel.com/400/200/cats/" th:src="@{${recipe.imageUrl}}" th:alt="${recipe.title}" />
             <h3 th:text="${recipe.title}">Title of recipe</h3>
           </article>
         </a>
 
-        <a href="#" title="recipe link">
+        <a href="recipe.html" title="recipe link">
           <article th:remove="all">
             <img src="http://lorempixel.com/400/200/cats/" />
             <h3>Title of recipe</h3>

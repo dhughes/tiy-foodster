@@ -55,10 +55,6 @@ input {
   margin-bottom: 50px;
 }
 
-textarea {
-  /*border: 2px solid teal;*/
-}
-
 input:focus{
   outline: none;
 }
@@ -180,8 +176,11 @@ aside {
   padding: 0;
 }
 
-.recipe-form-list li input {
-  width: 100% !important;
+.recipe-form li textarea {
+  position: relative;
+  top: -23px;
+  right: 20px;
+  margin-bottom: 0;
 }
 
 br {
@@ -209,9 +208,9 @@ br {
     cursor: pointer;
   }
 
- input {
-    width: 50%;
-  }
+   input {
+      width: 50%;
+    }
 
   .recipe-form input,textarea {
     width: 100%;
